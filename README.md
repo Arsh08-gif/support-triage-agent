@@ -4,7 +4,7 @@
 A terminal-based AI agent that reads support tickets and automatically decides
 whether to reply or escalate — grounded entirely in scraped support documentation.
 
----
+
 ## What it does
 
 For each ticket, the agent:
@@ -12,16 +12,16 @@ For each ticket, the agent:
 - Retrieves the most relevant support documentation
 - Classifies the issue and assesses risk
 - Either replies with a grounded answer or escalates to a human
----
 
----
+
+
 
 ## How it works
 
 1. **Scraper** crawls the support sites and builds a local corpus
 2. **Retriever** finds the most relevant documentation chunks for each ticket
 3. **Agent** uses Groq (LLaMA 3.3 70B) to classify, respond, or escalate
----
+
 
 
 ## Repository layout
@@ -42,20 +42,7 @@ For each ticket, the agent:
     ├── support_tickets.csv         # Inputs only (run your agent on these)
     └── output.csv                  # Write your agent's predictions here
 ```
----
 
----
-## Architecture
-
-support_tickets.csv
-↓
-main.py (CLI)
-↓
-retriever.py  ←  corpus/ (scraped support docs)
-↓
-agent.py  →  Groq API (LLaMA 3.3 70B)
-↓
-output.csv
 
 **scraper.py** — crawls HackerRank, Claude, and Visa support sites and saves
 content locally as text files.
@@ -117,7 +104,7 @@ A terminal-based agent that, for each row in `support_tickets/support_tickets.cs
 | `response`     | user-facing answer grounded in the provided corpus      |
 | `justification`| concise explanation of the routing/answering decision   |
 | `request_type` | `product_issue`, `feature_request`, `bug`, `invalid`    |
----
+
 
 ## Project structure
 
