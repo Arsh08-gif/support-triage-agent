@@ -31,3 +31,5 @@ data/index/
 data/embeddings/
 *.sqlite
 *.db
+code/corpus/
+support_tickets/output.csv
